@@ -1,15 +1,18 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+
+import ReactionList from '../components/ReactionList';
+import ReactionForm from '../components/ReactionForm';
+
+import Auth from '../utils/auth';
 import { useQuery } from '@apollo/client';
 import { QUERY_THOUGHT } from '../utils/queries';
-import ReactionList from '../components/ReactionList';
-import { Link } from 'react-router-dom';
 
-const SingleThought = props => {
+const SingleThought = (props) => {
   const { id: thoughtId } = useParams();
-  //console.log(thoughtId);
+
   const { loading, data } = useQuery(QUERY_THOUGHT, {
-    variables: { id: thoughtId }
+    variables: { id: thoughtId },
   });
 
   const thought = data?.thought || {};
@@ -22,28 +25,21 @@ const SingleThought = props => {
     <div>
       <div className="card mb-3">
         <p className="card-header">
-          <Link 
-            to={`/profile/${thought.username}`}
-            style={{ fontWeight: 700 }}
-            className="text-light"
-          >
+          <span style={{ fontWeight: 700 }} className="text-light">
             {thought.username}
-          </Link>{' '}
+          </span>{' '}
           thought on {thought.createdAt}
         </p>
         <div className="card-body">
-          <Link to={`/thought/${thought._id}`}>
-            <p>{thought.thoughtText}</p>
-            <p className="mb-0">
-              Reactions: {thought.reactionCount} || Click to{' '}
-              {thought.reactionCount ? 'see' : 'start'} the discussion!
-            </p>
-          </Link>
-         
+          <p>{thought.thoughtText}</p>
         </div>
       </div>
 
-      {thought.reactionCount > 0 && <ReactionList reactions={thought.reactions} />}
+      {thought.reactionCount > 0 && (
+        <ReactionList reactions={thought.reactions} />
+      )}
+
+      {Auth.loggedIn() && <ReactionForm thoughtId={thought._id} />}
     </div>
   );
 };
