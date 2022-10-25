@@ -6,7 +6,8 @@ This web application is a social media platform that allows users to post their 
 ## Usage
 Once a user has created an account they can navigate to the homepage to make a new post or view recent posts. 
 
-<img width="1740" alt="image" src="https://user-images.githubusercontent.com/86696492/197690258-36b0bb19-dcdc-4922-af5b-811aad3194d9.png">
+
+<img width="1326" alt="image" src="https://user-images.githubusercontent.com/86696492/197855124-6056faf1-d14b-4380-ba35-98ff1a160d7c.png">
 
 
 Users can also click on an individual post to view or make reactions on said post.
