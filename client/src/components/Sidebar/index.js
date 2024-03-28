@@ -6,7 +6,6 @@ const Sidebar = ({ username }) => {
       <div className="card-body">
         <div className="profile-picture-wrapper">
           <img className="profile-picture" src="/kirby.png" alt="profile" />
-          <h2 className="username">{username}</h2>
           <div className="card-body">
             <p className="bio-text">
               Hey there! My name's Nicola. I love to hike, dance, and read.

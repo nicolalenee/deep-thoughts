@@ -79,9 +79,6 @@ p {
   margin-top: 0;
   text-align: left;
 }
-.username {
-  color: var(--dark);
-}
 
 a {
   color: var(--dark);

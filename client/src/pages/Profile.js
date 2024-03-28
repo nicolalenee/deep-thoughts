@@ -65,6 +65,7 @@ const Profile = (props) => {
 
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
+          <div className="mb-3">{!userParam && <ThoughtForm />}</div>
           <ThoughtList
             thoughts={user.thoughts}
             title={`${user.username}'s thoughts...`}
@@ -81,7 +82,6 @@ const Profile = (props) => {
           />
         </div>
       </div>
-      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>
   );
 };
