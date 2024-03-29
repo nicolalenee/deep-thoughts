@@ -28,7 +28,6 @@ const userSchema = new Schema(
     },
     profilePic: {
       type: String,
-      required: false,
     },
     thoughts: [
       {
