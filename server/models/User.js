@@ -22,11 +22,14 @@ const userSchema = new Schema(
     },
     bio: {
       type: String,
-      required: false,
       maxlength: 100,
+      required: false,
       default: "",
     },
-    // add profile picture to schema
+    profilePic: {
+      type: String,
+      required: false,
+    },
     thoughts: [
       {
         type: Schema.Types.ObjectId,

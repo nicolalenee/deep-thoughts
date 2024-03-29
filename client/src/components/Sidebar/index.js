@@ -7,10 +7,7 @@ const Sidebar = ({ username }) => {
         <div className="profile-picture-wrapper">
           <img className="profile-picture" src="/kirby.png" alt="profile" />
           <div className="card-body">
-            <p className="bio-text">
-              Hey there! My name's Nicola. I love to hike, dance, and read.
-              Currently, I'm craving some Mexican.
-            </p>
+            <p className="bio-text"></p>
             <btn className="btn pill form-input">Edit Profile</btn>
           </div>
         </div>

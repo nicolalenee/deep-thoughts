@@ -1,9 +1,9 @@
-const faker = require('faker');
+const faker = require("faker");
 
-const db = require('../config/connection');
-const { Thought, User } = require('../models');
+const db = require("../config/connection");
+const { Thought, User } = require("../models");
 
-db.once('open', async () => {
+db.once("open", async () => {
   await Thought.deleteMany({});
   await User.deleteMany({});
 
@@ -14,8 +14,9 @@ db.once('open', async () => {
     const username = faker.internet.userName();
     const email = faker.internet.email(username);
     const password = faker.internet.password();
+    const bio = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    userData.push({ username, email, password });
+    userData.push({ username, email, password, bio });
   }
 
   const createdUsers = await User.collection.insertMany(userData);
@@ -28,7 +29,9 @@ db.once('open', async () => {
     let friendId = userId;
 
     while (friendId === userId) {
-      const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
+      const randomUserIndex = Math.floor(
+        Math.random() * createdUsers.ops.length
+      );
       friendId = createdUsers.ops[randomUserIndex];
     }
 
@@ -60,7 +63,9 @@ db.once('open', async () => {
     const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
     const { username } = createdUsers.ops[randomUserIndex];
 
-    const randomThoughtIndex = Math.floor(Math.random() * createdThoughts.length);
+    const randomThoughtIndex = Math.floor(
+      Math.random() * createdThoughts.length
+    );
     const { _id: thoughtId } = createdThoughts[randomThoughtIndex];
 
     await Thought.updateOne(
@@ -70,6 +75,6 @@ db.once('open', async () => {
     );
   }
 
-  console.log('all done!');
+  console.log("all done!");
   process.exit(0);
 });
