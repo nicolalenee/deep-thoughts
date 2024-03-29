@@ -26,7 +26,9 @@ const userSchema = new Schema(
       maxlength: 100,
       default: "",
     },
-    // add profile picture to schema
+    profilePic: {
+      type: String,
+    },
     thoughts: [
       {
         type: Schema.Types.ObjectId,
