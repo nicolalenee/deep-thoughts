@@ -22,9 +22,6 @@ const userSchema = new Schema(
     },
     bio: {
       type: String,
-      maxlength: 100,
-      required: false,
-      default: "",
     },
     profilePic: {
       type: String,

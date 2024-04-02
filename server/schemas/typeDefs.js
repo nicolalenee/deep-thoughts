@@ -5,6 +5,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    bio: String
     friendCount: Int
     thoughts: [Thought]
     friends: [User]
@@ -45,6 +46,7 @@ const typeDefs = gql`
     addThought(thoughtText: String!): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User
+    addBio(_id: ID!, bio: String): Auth
   }
 `;
 
