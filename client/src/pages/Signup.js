@@ -9,7 +9,7 @@ const Signup = () => {
     username: "",
     email: "",
     password: "",
-    bio: "",
+    bioText: "",
   });
   // create a closure hook that creates the mutation and returns it
   const [addUser, { error }] = useMutation(ADD_USER);
@@ -77,10 +77,10 @@ const Signup = () => {
               <input
                 className="form-input"
                 placeholder="Tell us about yourself!"
-                name="bio"
-                type="bio"
-                id="bio"
-                value={formState.bio}
+                name="bioText"
+                type="bioText"
+                id="bioText"
+                value={formState.bioText}
                 onChange={handleChange}
               />
               <button className="btn d-block w-100" type="submit">

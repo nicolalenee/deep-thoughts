@@ -14,9 +14,9 @@ db.once("open", async () => {
     const username = faker.internet.userName();
     const email = faker.internet.email(username);
     const password = faker.internet.password();
-    const bio = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+    const bioText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
-    userData.push({ username, email, password, bio });
+    userData.push({ username, email, password, bioText });
   }
 
   const createdUsers = await User.collection.insertMany(userData);

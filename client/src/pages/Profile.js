@@ -74,7 +74,7 @@ const Profile = (props) => {
 
         <div className="col-12 col-lg-3 mb-3">
           {/* we want our SIDEBAR to to go here */}
-          <Sidebar username={user.username} />
+          <Sidebar bioText={user.bioText} />
           <FriendList
             username={user.username}
             friendCount={user.friendCount}
