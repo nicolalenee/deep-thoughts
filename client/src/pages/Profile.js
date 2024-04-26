@@ -18,6 +18,7 @@ const Profile = (props) => {
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
+  console.log(data.user);
 
   const user = data?.me || data?.user || {};
 
@@ -75,6 +76,7 @@ const Profile = (props) => {
         <div className="col-12 col-lg-3 mb-3">
           {/* we want our SIDEBAR to to go here */}
           <Sidebar bioText={user.bioText} />
+
           <FriendList
             username={user.username}
             friendCount={user.friendCount}

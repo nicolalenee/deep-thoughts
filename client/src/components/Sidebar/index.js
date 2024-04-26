@@ -8,8 +8,8 @@ const Sidebar = ({ bioText }) => {
           <img className="profile-picture" src="/kirby.png" alt="profile" />
         </div>
         <div className="card-body">
-          <p className="bio">{bioText}</p>
-          <btn className="btn pill form-input">Edit Profile</btn>
+          <p className="bioText">{bioText}</p>
+          <button className="btn pill form-input">Edit Profile</button>
         </div>
       </div>
     </div>

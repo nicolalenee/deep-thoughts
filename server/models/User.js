@@ -22,6 +22,7 @@ const userSchema = new Schema(
     },
     bioText: {
       type: String,
+      required: false,
     },
     profilePic: {
       type: String,
@@ -66,5 +67,8 @@ userSchema.virtual("friendCount").get(function () {
 });
 
 const User = model("User", userSchema);
+
+// userSchema.add({ bioText: String });
+// userSchema.add({ profilePic: String });
 
 module.exports = User;
