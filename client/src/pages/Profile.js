@@ -4,7 +4,6 @@ import { Navigate, useParams } from "react-router-dom";
 import ThoughtForm from "../components/ThoughtForm";
 import ThoughtList from "../components/ThoughtList";
 import FriendList from "../components/FriendList";
-import Sidebar from "../components/Sidebar";
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
@@ -18,7 +17,6 @@ const Profile = (props) => {
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
-  console.log(data.user);
 
   const user = data?.me || data?.user || {};
 
@@ -75,7 +73,6 @@ const Profile = (props) => {
 
         <div className="col-12 col-lg-3 mb-3">
           {/* we want our SIDEBAR to to go here */}
-          <Sidebar bioText={user.bioText} />
 
           <FriendList
             username={user.username}
